@@ -1,6 +1,6 @@
 import angular from 'angular';
 import {react2angular} from 'react2angular';
-import InputBox from './components/inputBox';
+import Component1 from './components/component1';
 
 import '../style/app.css';
 
@@ -24,6 +24,6 @@ angular
     .module(MODULE_NAME, [])
     .directive('app', app)
     .controller('AppCtrl', AppCtrl)
-    .component('inputBox',react2angular(InputBox));
+    .component('component1',react2angular(Component1));
 
 export default MODULE_NAME;
