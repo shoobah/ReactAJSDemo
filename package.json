@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/preboot/angularjs-webpack",
   "dependencies": {
-    "angular": "^1.5.0"
+    "angular": "^1.5.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0",
@@ -28,6 +30,7 @@
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "copy-webpack-plugin": "4.0.1",
     "css-loader": "0.26.1",
     "extract-text-webpack-plugin": "2.0.0-beta.5",
@@ -46,7 +49,9 @@
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.4",
     "postcss-loader": "1.2.2",
+    "prop-types": "^15.6.0",
     "raw-loader": "^0.5.1",
+    "react2angular": "^3.1.0",
     "rimraf": "^2.5.1",
     "style-loader": "^0.13.0",
     "webpack": "2.2.0",
