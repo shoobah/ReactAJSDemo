@@ -24,6 +24,6 @@ angular
     .module(MODULE_NAME, [])
     .directive('app', app)
     .controller('AppCtrl', AppCtrl)
-    .component('component1',react2angular(Component1));
+    .component('component1', react2angular(Component1, [], ['$http']));
 
-export default MODULE_NAME;
+export default ['$http', MODULE_NAME];
