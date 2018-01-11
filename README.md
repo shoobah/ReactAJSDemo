@@ -2,4 +2,5 @@
 $ npm install
 
 # start the server
+## port 8080
 $ npm start
