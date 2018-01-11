@@ -20,3 +20,9 @@ footer {
   text-align: center;
   font-size: 0.8em;
 }
+
+.image {
+  width: 120px;
+  animation:spin 10s linear infinite;
+}
+@keyframes spin { 100% { transform:rotate(360deg); } }
