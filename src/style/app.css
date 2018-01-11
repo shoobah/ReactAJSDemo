@@ -23,6 +23,6 @@ footer {
 
 .image {
   width: 120px;
-  animation:spin 10s linear infinite;
+  animation:spin 60s linear infinite;
 }
 @keyframes spin { 100% { transform:rotate(360deg); } }
