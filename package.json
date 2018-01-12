@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/preboot/angularjs-webpack",
   "dependencies": {
+    "@types/angular": "^1.5.9",
     "@types/prop-types": "^15.5.2",
     "@types/react": "^16.0.34",
     "@types/react-dom": "^16.0.3",

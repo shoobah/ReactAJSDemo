@@ -1,5 +1,5 @@
-import * as moment from 'moment';
 import * as React from 'react';
+import * as moment from '../../../node_modules/moment/moment'; 
 
 export class Timer extends React.Component {
     state: { currentTime: number; };

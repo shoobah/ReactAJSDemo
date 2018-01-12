@@ -2,13 +2,15 @@ import * as React from 'react';
 
 import {Timer} from './timer';
 import {DogData} from './dogData';
+import {IHttpService} from '../../../node_modules/@types/angular/index';
 
 export interface Component1Props {
-    thing: string
+    thing: string;
+    $http: IHttpService;
 }
 
-class Component1 extends React.Component<Component1Props,{}> {
-    myStyle: { width: string; border: string; };
+class Component1 extends React.Component<Component1Props, {}> {
+    myStyle: {width: string; border: string};
     state: {data: {}};
 
     constructor(props) {

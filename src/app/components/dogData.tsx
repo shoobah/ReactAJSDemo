@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-
 const bigFont = {listStyle: 'none', fontSize: '18px', textAlign: 'left'};
 const smallFont = {listStyle: 'none', fontSize: '14px', textAlign: 'left'};
 

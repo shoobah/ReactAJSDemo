@@ -1,6 +1,10 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "jsx": "react"
-    }
+  "compilerOptions": {
+    "target": "es6",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "types": [
+      "angular"
+    ]
   }
+}
