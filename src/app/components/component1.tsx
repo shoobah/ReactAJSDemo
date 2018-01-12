@@ -1,10 +1,16 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 
-import Timer from './timer';
-import DogData from './dogData';
+import {Timer} from './timer';
+import {DogData} from './dogData';
 
-class Component1 extends Component {
+export interface Component1Props {
+    thing: string
+}
+
+class Component1 extends React.Component<Component1Props,{}> {
+    myStyle: { width: string; border: string; };
+    state: {data: {}};
+
     constructor(props) {
         super(props);
         this.state = {
@@ -34,9 +40,5 @@ class Component1 extends Component {
         );
     }
 }
-
-Component1.propTypes = {
-    thing: PropTypes.string
-};
 
 export default Component1;

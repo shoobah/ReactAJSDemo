@@ -1,4 +1,5 @@
-import React from 'react';
+import * as React from 'react';
+
 
 const bigFont = {listStyle: 'none', fontSize: '18px', textAlign: 'left'};
 const smallFont = {listStyle: 'none', fontSize: '14px', textAlign: 'left'};
@@ -22,8 +23,6 @@ const generateRows = data => {
     return a;
 };
 
-const dogData = props => {
+export const DogData = props => {
     return <ul style={bigFont}>{generateRows(props.data)}</ul>;
 };
-
-export default dogData;

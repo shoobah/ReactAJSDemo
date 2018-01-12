@@ -1,7 +1,8 @@
-import moment from 'moment';
-import React, {Component} from 'react';
+import * as moment from 'moment';
+import * as React from 'react';
 
-class Timer extends Component {
+export class Timer extends React.Component {
+    state: { currentTime: number; };
     constructor(props) {
         super(props);
         this.state = {
@@ -10,19 +11,17 @@ class Timer extends Component {
         moment.locale('sv');
     }
 
-    startTimer() {
+    startTimer(me) {
         setInterval(() => {
-            this.setState({currentTime: Date.now()});
+            me.setState({currentTime: Date.now()});
         }, 1000);
     }
 
     componentDidMount() {
-        this.startTimer();
+        this.startTimer(this);
     }
 
     render() {
         return <div>Time: {moment(this.state.currentTime).format('Y-M-D HH:mm:ss')}</div>;
     }
 }
-
-export default Timer;
