@@ -7,16 +7,17 @@ export interface C3TestProps {
 }
 
 export class C3Test extends React.Component<C3TestProps, any> {
+    chart : c3.ChartAPI;
     componentDidMount(){
-        c3.generate({
+        this.chart = c3.generate({
             bindto: "#chart",
-            data: this.props.indata,
-            axis: {
-                y2: {
-                    show: true
-                }
-            }
+            data: this.props.indata
         });
+    }
+
+    componentWillReceiveProps(nextProps : C3TestProps){
+        //this.chart.unload();
+        this.chart.load({columns: nextProps.indata.columns})
     }
 
     render() {

@@ -1,23 +1,24 @@
 import * as React from 'react';
 
 import {Timer} from './timer';
-import {DogData} from './dogData';
-import {IHttpService} from '../../../node_modules/@types/angular/index';
 import {C3Test} from './c3test';
 
 export interface Component1Props {
     thing: string;
-    $http: IHttpService;
 }
 
-class Component1 extends React.Component<Component1Props, {}> {
-    myStyle: {width: string; border: string};
-    state: {data: {}};
+export interface Component1State {
+    data: {};
+    chartData: c3.Data;
+}
 
+class Component1 extends React.Component<Component1Props, Component1State> {
+    myStyle: {width: string; border: string};
     constructor(props) {
         super(props);
         this.state = {
-            data: '{}'
+            data: '{}',
+            chartData: this.getChartData()
         };
         this.myStyle = {
             width: '500px',
@@ -26,32 +27,40 @@ class Component1 extends React.Component<Component1Props, {}> {
     }
 
     something() {
-        alert('hej');
-    }
-
-    componentDidMount() {
-        this.props.$http.get('https://dog.ceo/api/breeds/list/all').then(res => {
-            this.setState({data: res.data});
+        this.setState({
+            chartData: this.getChartData()
         });
+        console.log('chartData', this.state.chartData);
     }
 
-    chartdata: c3.Data = {
-        columns: [['data1', 30, 200, 100, 400, 150, 250], ['data2', 50, 20, 10, 40, 15, 25]],
-        axes: {
-            data2: 'y2'
+    generateRandomData(): c3.Data {
+        const r = () => Math.floor(Math.random() * Math.floor(1000));
+        let dd : c3.Data = {columns:[]};
+        for (let j = 0; j < 4; j++) {
+            let d: (string | number | boolean)[] = ['data' + j];
+            for (let i = 0; i < 10; i++) {
+                d.push(r());
+                4;
+            }
+            dd.columns.push(d);
         }
+        return dd;
+    }
+
+    getChartData(): c3.Data {
+        return this.generateRandomData();
     }
 
     render() {
         return (
             <div>
-                <button onClick={this.something.bind(this)} >HEJ</button>
-                <input style={this.myStyle} placeholder={this.props.thing} />
                 <div>
                     <Timer />
                 </div>
-                <C3Test indata={this.chartdata} />
-                {/* <DogData data={this.state.data} /> */}
+                <button onClick={this.something.bind(this)}>Randomize data</button>
+                <div style={{backgroundColor: '#fff'}}>
+                    <C3Test indata={this.state.chartData} />
+                </div>
             </div>
         );
     }
