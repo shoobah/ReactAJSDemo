@@ -1,6 +1,6 @@
 import angular from 'angular';
 import {react2angular} from 'react2angular';
-import Component1 from './components/component1';
+import Mother from './components/mother';
 
 import '../style/app.css';
 
@@ -24,6 +24,6 @@ angular
     .module(MODULE_NAME, [])
     .directive('app', app)
     .controller('AppCtrl', AppCtrl)
-    .component('component1', react2angular(Component1, [], ['$http']));
+    .component('mother', react2angular(Mother, [], ['$http']));
 
 export default ['$http', MODULE_NAME];

@@ -3,16 +3,16 @@ import * as React from 'react';
 import {Timer} from './timer';
 import {C3Test} from './c3test';
 
-export interface Component1Props {
+export interface MotherProps {
     thing: string;
 }
 
-export interface Component1State {
+export interface MotherState {
     data: {};
     chartData: c3.Data;
 }
 
-class Component1 extends React.Component<Component1Props, Component1State> {
+class Mother extends React.Component<MotherProps, MotherState> {
     myStyle: {width: string; border: string};
     constructor(props) {
         super(props);
@@ -66,4 +66,4 @@ class Component1 extends React.Component<Component1Props, Component1State> {
     }
 }
 
-export default Component1;
+export default Mother;
